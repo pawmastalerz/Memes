@@ -23,4 +23,12 @@ export class DetailsComponent implements OnInit {
     });
     this.memeService.memeToDisplayId$.next(this.route.snapshot.params['id']);
   }
+
+  goBack() {
+    this.memeService.goBack();
+  }
+
+  goNext() {
+    this.memeService.goNext();
+  }
 }

@@ -1,3 +1,10 @@
-<p>
-  details works!
-</p>
+<div class="meme-container"
+  *ngIf="meme">
+  <button (click)="goBack()">previous</button>
+  <div class="meme">
+    <div class="image"
+      [ngStyle]="{'background-image':' url(' + meme?.url + ')'}"></div>
+    <p>{{meme.name}}</p>
+  </div>
+  <button (click)="goNext()">next</button>
+</div>

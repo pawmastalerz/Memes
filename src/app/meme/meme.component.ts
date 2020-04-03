@@ -21,7 +21,7 @@ export class MemeComponent implements OnInit {
       MEME_RESOLVER_DATA
     ];
     const memes = memeResponse.data.memes;
-    this.memeService.memes$.next(memes);
+    this.memeService.setMemes(memes);
     if (!this.route.children.length) {
       this.router.navigate(['meme', memes[0].id]);
     }
