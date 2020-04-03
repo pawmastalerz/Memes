@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Meme } from 'src/models/Meme';
+import { MemeService } from 'src/services/meme.service';
 
 @Component({
   selector: 'app-details',
@@ -6,7 +9,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./details.component.scss'],
 })
 export class DetailsComponent implements OnInit {
-  constructor() {}
+  public meme: Meme;
+  public memeId: number;
+  constructor(
+    private route: ActivatedRoute,
+    private memeService: MemeService
+  ) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.memeService.memeToDisplayId$.subscribe((id) => {
+      this.meme = this.memeService.getMemeById(id);
+      console.log(this.meme);
+    });
+    this.memeService.memeToDisplayId$.next(this.route.snapshot.params['id']);
+  }
 }

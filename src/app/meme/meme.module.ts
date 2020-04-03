@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { MemeResolver } from './../../resolvers/meme.resolver';
+import { MemeResolver } from 'src/resolvers/meme.resolver';
 import { DetailsComponent } from './details/details.component';
 import { MemeComponent } from './meme.component';
 
