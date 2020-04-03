@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { MatButtonModule } from '@angular/material/button';
 import { RouterModule, Routes } from '@angular/router';
 import { MemeResolver } from 'src/resolvers/meme.resolver';
 import { DetailsComponent } from './details/details.component';
@@ -20,7 +21,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [CommonModule, RouterModule.forChild(routes)],
+  imports: [CommonModule, MatButtonModule, RouterModule.forChild(routes)],
   declarations: [MemeComponent, DetailsComponent],
   exports: [RouterModule],
 })
